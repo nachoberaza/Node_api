@@ -8,7 +8,7 @@ const TrackSchema = new mongoose.Schema(
         cover: {type: String, validate: { validator: (req) => { return true }, message: 'Error' }},
         artist: { name:{type: String}, nickname:{type: String}, nationally:{type: String} },
         duration: {start:{type: Number}, end:{type: Number}},
-        mediaId:{ type: mongoose.Types.ObjectId }
+        mediaId:{ type: String } //mongoose.Types.ObjectId }
     },
     {
         timestamps: true, // TODO: createdAt, updateAt
