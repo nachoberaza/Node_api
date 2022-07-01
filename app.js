@@ -16,7 +16,11 @@ app.use("/api",routes);
 
 
 /** Start-up the server */
-app.listen(port, () => console.log(`🚀 Server started on http://localhost:${port}`));
+app.listen(port, () => {
+    console.clear();
+    const date = (new Date()).toUTCString();
+    console.log(`${date} - 🚀 Server started on http://localhost:${port}`);
+});
 
 /** MongoDB connection */
 dbConnect();
