@@ -1,6 +1,5 @@
 const {tracksModel} = require('../models/index_models');
 
-
 /** GET */
 const getItems = async (req,res) => {
     const data = await tracksModel.find({});
@@ -11,6 +10,7 @@ const getItem = async (req,res) => {
     const data = 'Not implemented yet';
     res.send({data});
 }
+
 /** POST */
 const createItem = async (req,res) =>{
     const { body } = req;
