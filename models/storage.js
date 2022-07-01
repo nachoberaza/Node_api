@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const StorageSchema = new mongoose.Schema(
     {
         url:{ type: String, required: true},
-        filename: { type: Number, required: false},
+        filename: { type: String, required: false},
     },
     {
         timestamps: true, // TODO: createdAt, updateAt

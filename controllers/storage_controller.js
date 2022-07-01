@@ -1,4 +1,5 @@
 const {storageModel} = require('../models/index_models');
+const PUBLIC_URL = process.env.PUBLIC_URL
 
 /** GET */
 const getItems = async (req,res) => {
@@ -12,9 +13,13 @@ const getItem = async (req,res) => {
 }
 /** POST */
 const createItem = async (req,res) =>{
-    const { body,file } = req;
-    // const data = await storageModel.create(body);
-    res.send({file});
+    const { file } = req;
+    const fileData = {
+        fileName: file.filename,
+        url: `${PUBLIC_URL}/${file.filename}`
+    }
+    const data = await storageModel.create(fileData);
+    res.send({data});
 }
 
 
